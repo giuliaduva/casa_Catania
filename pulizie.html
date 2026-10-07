@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pulizie - Casa Catania</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a href="index.html" class="torna-home">← Torna alla Home</a>
+
+    <header>
+        <h1>🧹 Turni delle pulizie</h1>
+        <p>Organizziamo insieme la nostra casa.</p>
+    </header>
+
+    <main>
+
+        <div class="calendar-header">
+            <button>‹</button>
+
+            <h2>Ottobre 2026</h2>
+
+            <button>›</button>
+        </div>
+
+        <div class="calendar" id="calendario">
+        </div>
+
+    </main>
+    <div id="finestraTurno" class="finestra-nascosta">
+
+        <div class="finestra">
+    
+            <button class="chiudi" onclick="chiudiFinestra()">×</button>
+    
+            <h2>🧹 Aggiungi turno</h2>
+    
+            <p id="dataTurno"></p>
+    
+            <label for="persona">Chi fa il turno?</label>
+    
+            <select id="persona">
+                <option>Giulia</option>
+                <option>Ester</option>
+                <option>Elisabetta</option>
+                <option>Coinquilina 4</option>
+            </select>
+    
+            <label for="pulizia">Cosa bisogna fare?</label>
+    
+            <select id="pulizia">
+                <option>🧹 Bagno</option>
+                <option>🧽 Cucina</option>
+                <option>🧹 Pavimenti</option>
+                <option>🗑️ Spazzatura</option>
+            </select>
+    
+            <button class="salva-turno" onclick="salvaTurno()">
+                Salva turno
+            </button>
+    
+        </div>
+    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
+

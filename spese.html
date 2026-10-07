@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spese - Casa Catania</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a href="index.html" class="torna-home">← Torna alla Home</a>
+
+    <header>
+        <h1>🛒 Spese comuni</h1>
+        <p>Teniamo sotto controllo quello che spendiamo per la casa.</p>
+    </header>
+
+    <main>
+
+        <section class="riepilogo-spese">
+
+            <div class="scheda-spesa">
+                <h3>💰 Totale speso</h3>
+                <p id="totaleSpeso">€ 0,00</p>
+            </div>
+        
+            <div class="scheda-spesa">
+                <h3>👤 Le tue spese</h3>
+                <p id="mieSpese">€ 0,00</p>
+            </div>
+        
+            <div class="scheda-spesa">
+                <h3>⚖️ Quota a testa</h3>
+                <p id="quotaPersona">€ 0,00</p>
+            </div>
+        
+        </section>
+        
+        <section class="riepilogo-debiti">
+        
+            <div class="scheda-spesa">
+                <h3>💚 Giulia</h3>
+                <p id="saldoGiulia">€ 0,00</p>
+            </div>
+        
+            <div class="scheda-spesa">
+                <h3>💙 Ester</h3>
+                <p id="saldoEster">€ 0,00</p>
+            </div>
+        
+            <div class="scheda-spesa">
+                <h3>💜 Elisabetta</h3>
+                <p id="saldoElisabetta">€ 0,00</p>
+            </div>
+        
+        </section>
+
+        <section class="chi-deve-cosa">
+
+            <h2>💸 Chi deve cosa?</h2>
+        
+            <div id="riepilogoDebiti">
+                <p>Nessun debito al momento.</p>
+            </div>
+        
+        </section>
+       
+        <section class="aggiungi-spesa">
+
+            <h2>➕ Aggiungi una spesa</h2>
+
+            <label for="descrizione">Cosa avete comprato?</label>
+
+            <input
+                type="text"
+                id="descrizione"
+                placeholder="Es. Carta igienica"
+            >
+
+
+            <label for="importo">Quanto avete speso?</label>
+
+            <input
+                type="number"
+                id="importo"
+                placeholder="Es. 5,50"
+                step="0.01"
+            >
+
+
+            <label for="chiHaPagato">Chi ha pagato?</label>
+
+            <select id="chiHaPagato">
+
+                <option>Giulia</option>
+                <option>Ester</option>
+                <option>Elisabetta</option>
+                <option>Coinquilina 4</option>
+
+            </select>
+
+
+            <button onclick="aggiungiSpesa()">
+                Aggiungi spesa
+            </button>
+
+        </section>
+
+
+        <section class="lista-spese">
+
+            <h2>📋 Spese recenti</h2>
+
+            <div id="elencoSpese">
+
+                <p class="nessuna-spesa">
+                    Non ci sono ancora spese registrate.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

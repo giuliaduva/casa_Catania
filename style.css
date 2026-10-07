@@ -1,0 +1,297 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f3ed;
+    color: #333;
+    margin: 0;
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu button {
+    width: 180px;
+    height: 130px;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.menu button:hover {
+    transform: translateY(-3px);
+}
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.calendar-header button {
+    border: none;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.calendar {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.day-name {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.day {
+    min-height: 90px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.day strong {
+    font-size: 16px;
+}
+
+.day.empty {
+    background-color: transparent;
+}
+.finestra-nascosta {
+    display: none;
+}
+
+#finestraTurno {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#finestraTurno.finestra-nascosta {
+    display: none;
+}
+
+.finestra {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 320px;
+    position: relative;
+}
+
+.finestra h2 {
+    margin-top: 0;
+}
+
+.finestra label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+
+.finestra select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.chiudi {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+
+    border: none;
+    background: none;
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.salva-turno {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #333;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+.turno {
+    margin-top: 10px;
+    padding: 6px;
+    background-color: #f0ebe4;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.turno strong {
+    font-size: 13px;
+}
+.riepilogo-spese {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.scheda-spesa {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.scheda-spesa h3 {
+    margin-top: 0;
+}
+
+.scheda-spesa p {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.aggiungi-spesa,
+.lista-spese {
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.aggiungi-spesa label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.aggiungi-spesa input,
+.aggiungi-spesa select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.aggiungi-spesa button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.spesa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #f7f3ed;
+    border-radius: 10px;
+}
+
+.spesa p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.nessuna-spesa {
+    text-align: center;
+    color: #777;
+}
+
+.riepilogo-debiti {
+    max-width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.riepilogo-debiti .scheda-spesa {
+    flex: 1;
+    min-width: 180px;
+    box-sizing: border-box;
+}
+.torna-home {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 25px;
+    padding: 10px 18px;
+
+    background-color: white;
+    color: #333;
+
+    text-decoration: none;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+    font-size: 15px;
+}
+
+.torna-home:hover {
+    transform: translateY(-2px);
+}

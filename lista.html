@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lista della spesa - Casa Catania</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a href="index.html" class="torna-home">← Torna alla Home</a>
+
+    <header>
+        <h1>🛒 Lista della spesa</h1>
+        <p>Segniamo insieme quello che manca in casa.</p>
+    </header>
+
+    <main>
+
+        <section class="aggiungi-spesa">
+            <h2>➕ Aggiungi alla lista</h2>
+
+            <label for="prodotto">Cosa serve?</label>
+
+            <input
+                type="text"
+                id="prodotto"
+                placeholder="Es. Carta igienica"
+            >
+
+            <button onclick="aggiungiProdotto()">
+                Aggiungi alla lista
+            </button>
+        </section>
+
+
+        <section class="lista-spese">
+
+            <h2>📋 Cose da comprare</h2>
+
+            <div id="listaProdotti">
+
+                <p class="nessuna-spesa">
+                    La lista è vuota.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
