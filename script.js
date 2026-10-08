@@ -56,20 +56,19 @@ const dataCompleta = document.getElementById("dataTurno").dataset.dataCompleta;
 
         if (numero && data.startsWith(numero.textContent + " ")) {
 
-            let turno = giorno.querySelector(".turno");
-
-            if (!turno) {
-                turno = document.createElement("div");
-                turno.classList.add("turno");
-                giorno.appendChild(turno);
-            }
-
+            const turno = document.createElement("div");
+            turno.classList.add("turno");
+        
             turno.innerHTML = `
-    <strong>${persona}</strong>
-    <div>${pulizieSelezionate.map(function(pulizia) {
-        return "☑️ " + pulizia;
-    }).join("<br>")}</div>
-`;
+                <strong>${persona}</strong>
+                <div>
+                    ${pulizieSelezionate.map(function(pulizia) {
+                        return "☑️ " + pulizia;
+                    }).join("<br>")}
+                </div>
+            `;
+        
+            giorno.appendChild(turno);
         }
     });
 
