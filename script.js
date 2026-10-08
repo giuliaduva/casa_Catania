@@ -14,9 +14,21 @@ function chiudiFinestra() {
 async function salvaTurno() {
 
     const persona = document.getElementById("persona").value;
-    const pulizia = document.getElementById("pulizia").value;
-    const data = document.getElementById("dataTurno").textContent;
-    const dataCompleta = document.getElementById("dataTurno").dataset.dataCompleta;
+
+const pulizieSelezionate = Array.from(
+    document.querySelectorAll('input[name="pulizia"]:checked')
+).map(function(checkbox) {
+    return checkbox.value;
+});
+
+const pulizia = pulizieSelezionate.join(", ");
+if (pulizieSelezionate.length === 0) {
+    alert("Seleziona almeno una pulizia.");
+    return;
+}
+
+const data = document.getElementById("dataTurno").textContent;
+const dataCompleta = document.getElementById("dataTurno").dataset.dataCompleta;
 
     const { data: turnoSalvato, error } = await supabaseClient
         .from("turni")
@@ -53,9 +65,11 @@ async function salvaTurno() {
             }
 
             turno.innerHTML = `
-                <strong>${persona}</strong><br>
-                ${pulizia}
-            `;
+    <strong>${persona}</strong>
+    <div>${pulizieSelezionate.map(function(pulizia) {
+        return "☑️ " + pulizia;
+    }).join("<br>")}</div>
+`;
         }
     });
 
@@ -491,18 +505,20 @@ if (calendario) {
     
                 if (dataGiorno === turno.data) {
     
-                    let elementoTurno = giorno.querySelector(".turno");
+                    const elementoTurno = document.createElement("div");
+elementoTurno.classList.add("turno");
+giorno.appendChild(elementoTurno);
     
-                    if (!elementoTurno) {
-                        elementoTurno = document.createElement("div");
-                        elementoTurno.classList.add("turno");
-                        giorno.appendChild(elementoTurno);
-                    }
-    
-                    elementoTurno.innerHTML = `
-                        <strong>${turno.persona}</strong><br>
-                        ${turno.pulizia}
-                    `;
+                    const pulizie = turno.pulizia.split(", ");
+
+elementoTurno.innerHTML = `
+    <strong>${turno.persona}</strong>
+    <div>
+        ${pulizie.map(function(pulizia) {
+            return "☑️ " + pulizia;
+        }).join("<br>")}
+    </div>
+`;
                 }
             });
         });
